@@ -5,7 +5,7 @@ from math import log
 
 MAX_POPULATION = 8
 MUTATION_CHANCE = 33
-FEATURE_SIZE = 1023
+FEATURE_SIZE = 127
 
 Tofik = namedtuple('Tofik', ['eyes', 'hair', 'nose', 'skin'])
 
