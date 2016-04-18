@@ -2,7 +2,7 @@ from random import randint
 from collections import namedtuple
 
 
-MAX_POPULATION = 10
+MAX_POPULATION = 8
 
 Tofik = namedtuple('Tofik', ['eyes', 'hair', 'nose', 'skin'])
 
