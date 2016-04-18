@@ -2,7 +2,7 @@ from .population import init_population, multiply, mutate
 from .gosia import kill_ugly, best_tofik
 from pprint import pprint
 
-MAX_GENERATIONS = 100
+MAX_GENERATIONS = 10
 
 
 def find_match():

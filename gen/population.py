@@ -1,19 +1,21 @@
 from random import randint
 from collections import namedtuple
+from math import log
 
 
 MAX_POPULATION = 8
 MUTATION_CHANCE = 33
+FEATURE_SIZE = 1023
 
 Tofik = namedtuple('Tofik', ['eyes', 'hair', 'nose', 'skin'])
 
 
 def gen_tofik():
     return Tofik(
-        randint(0, 127),
-        randint(0, 127),
-        randint(0, 127),
-        randint(0, 127)
+        randint(0, FEATURE_SIZE),
+        randint(0, FEATURE_SIZE),
+        randint(0, FEATURE_SIZE),
+        randint(0, FEATURE_SIZE)
     )
 
 
@@ -45,7 +47,7 @@ def multiply(pop):
 
 
 def _mutate_feature(value):
-    return value ^ pow(2, randint(0, 6))
+    return value ^ pow(2, randint(0, int(log(FEATURE_SIZE + 1, 2)) - 1))
 
 
 def _mutate(tofik):
