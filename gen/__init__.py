@@ -1,8 +1,10 @@
-from .population import init_population
+from .population import init_population, multiply
 from .gosia import kill_ugly
+from pprint import pprint
 
 
 def find_match():
     pop = init_population()
     pop = kill_ugly(pop)
-    print(pop)
+    kids = multiply(pop)
+    pprint(kids)
