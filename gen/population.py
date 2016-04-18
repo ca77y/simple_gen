@@ -23,10 +23,10 @@ def init_population():
 
 def _sex(t1, t2):
     return Tofik(
-        t1.eyes ^ t2.eyes,
-        t1.hair ^ t2.hair,
-        t1.nose ^ t2.nose,
-        t1.skin ^ t2.skin
+        t1.eyes,
+        t1.hair,
+        t2.nose,
+        t2.skin
     )
 
 
@@ -40,8 +40,7 @@ def multiply(pop):
         t1 = pop[k1]
         t2 = pop[k2]
         kid = _sex(t1, t2)
-        if kid not in result:
-            result.append(kid)
+        result.append(kid)
     return result
 
 
