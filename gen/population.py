@@ -3,6 +3,7 @@ from collections import namedtuple
 
 
 MAX_POPULATION = 8
+MUTATION_CHANCE = 33
 
 Tofik = namedtuple('Tofik', ['eyes', 'hair', 'nose', 'skin'])
 
@@ -42,3 +43,20 @@ def multiply(pop):
         if kid not in result:
             result.append(kid)
     return result
+
+
+def _mutate_feature(value):
+    return value ^ pow(2, randint(0, 6))
+
+
+def _mutate(tofik):
+    return Tofik(
+        tofik.eyes if randint(0, 100) > MUTATION_CHANCE else _mutate_feature(tofik.eyes),
+        tofik.hair if randint(0, 100) > MUTATION_CHANCE else _mutate_feature(tofik.hair),
+        tofik.nose if randint(0, 100) > MUTATION_CHANCE else _mutate_feature(tofik.nose),
+        tofik.skin if randint(0, 100) > MUTATION_CHANCE else _mutate_feature(tofik.skin)
+    )
+
+
+def mutate(pop):
+    return [_mutate(p) for p in pop]

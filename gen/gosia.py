@@ -2,12 +2,12 @@ from collections import namedtuple
 from .population import gen_tofik
 
 RankedTofik = namedtuple('RankedTofik', ['tofik', 'rank'])
-_best_tofik = gen_tofik()
+best_tofik = gen_tofik()
 
 
 def _hot_meter(tofik):
     tofik = tofik._asdict()
-    best = _best_tofik._asdict()
+    best = best_tofik._asdict()
     result = 0
     for key in best:
         result += abs(tofik[key] - best[key])
