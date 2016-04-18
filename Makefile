@@ -12,7 +12,7 @@ env:
 	$(PIP) install -r requirements.txt
 
 run:
-	$(PYTHON) gen
+	$(PYTHON) run.py
 
 flake:
 	$(FLAKE) gen

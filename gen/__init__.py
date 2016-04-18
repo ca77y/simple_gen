@@ -1,5 +1,6 @@
-def main():
-    pass
+from .population import init_population
 
-if __name__ == '__main__':
-    main()
+
+def find_match():
+    pop = init_population()
+    print(pop)
